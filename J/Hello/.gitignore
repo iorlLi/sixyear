@@ -3,8 +3,8 @@ HELP.md
 /.idea/
 /.gradle/
 /.mvn/
-.gitignore.swp
 **/.mvn/
+.gitignore.swp
 /untitled/
 /out/
 **/mvnw.cmd
