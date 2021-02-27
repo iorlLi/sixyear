@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * cas：不加锁，保证一致性
  * synchronized :一致性保证，并发量下降
  */
+
 public class CasDemo {
     public static void main(String[] args) {
         AtomicInteger atomicInteger = new AtomicInteger(3);
