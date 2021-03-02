@@ -4,26 +4,26 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * volidate 保证了 可见性、不保证原子性，禁止指令重排序
+ * volatile 保证了 可见性、不保证原子性，禁止指令重排序
  * jmm:java内存模式 需要 保证 可见性、原子性，禁止指令重排
- * *ate 为轻量级同步机制
- * *  * 使用 volidate + aotomic* 来保证原子性
- * * volid
+ * volatile为轻量级同步机制
+ * 使用 volidate + aotomic* 来保证原子性
  */
 
 class Data {
-    volatile  int num = 0;
+    volatile int num = 0;
     AtomicInteger ait = new AtomicInteger(0);
 
     public void add1() {
         num = 60;
     }
+
     public void add3() {
-        num ++;
+        num++;
     }
 
-//    AtomicInteger ait =  new AtomicInteger(0);
-    public  void add2(){
+    //    AtomicInteger ait =  new AtomicInteger(0);
+    public void add2() {
         ait.getAndIncrement();
     }
 }
@@ -32,14 +32,14 @@ public class VolatileDemo {
 
 
     public static void main(String[] args) {
-        canAotomic();
+        canAtomic();
         //canLook();
     }
 
     /**
      * 不保证原子性，需要使用原子类来实现
      */
-    private static void canAotomic() {
+    private static void canAtomic() {
         Data data1 = new Data();
 
         for (int i = 0; i < 10; i++) {
@@ -52,7 +52,7 @@ public class VolatileDemo {
         }
 
         //等待多线程执行完毕
-        while (Thread.activeCount() > 2){
+        while (Thread.activeCount() > 2) {
             Thread.yield();
         }
         System.out.println(Thread.currentThread().getName() + "  " + data1.ait);
@@ -77,7 +77,7 @@ public class VolatileDemo {
                 System.out.println(Thread.currentThread().getName() + "  " + data1.num);
             }, String.valueOf(i)).start();
         }
-        while (data1.num == 0){
+        while (data1.num == 0) {
 
         }
         System.out.println(Thread.currentThread().getName() + "  " + data1.num);

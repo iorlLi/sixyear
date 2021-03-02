@@ -10,11 +10,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * 1. 故障现象
  * java.util.ConcurrentModificationException
  * 2. 导致原因
- * <p>
+ *
  * 3. 解决方案
  * 3.1 new Vector   方法层加锁
  * 3.2 Collections.synchronizedList(new ArrayList<>());  同步代码快
- * 3.3
+ * 3.3 CopyOnWriteArrayList
  *
  * <p>
  * 4. 优化建议：避免再发生

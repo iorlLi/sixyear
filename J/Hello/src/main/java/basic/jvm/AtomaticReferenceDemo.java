@@ -24,6 +24,7 @@ public class AtomaticReferenceDemo {
         User u2 = new User("b", 2);
         AtomicReference<User> ref = new AtomicReference<User>();
         ref.set(u1);
+        System.out.println(ref.toString());
         System.out.println(ref.compareAndSet(u1, u2) + "\t" + ref.get().toString());
 
     }
