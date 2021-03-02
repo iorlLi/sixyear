@@ -3,7 +3,16 @@ package basic.juc;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ReenterLockDeom {
+/**
+ * 可重入锁（递归锁）：线程可以进入任何一个它已经拥有的锁所同步着的代码块
+ *
+ * https://zhuanlan.zhihu.com/p/71156910
+ *
+ * 可重入锁的字面意思是“可以重新进入的锁”，即允许同一个线程多次获取同一把锁。
+ * 比如一个递归函数里有加锁操作，递归过程中这个锁如果不会阻塞自己，那么这个锁
+ * 就是可重入锁（因为这个原因可重入锁也叫做递归锁）。
+ */
+public class J2_ReenterLockDeom {
     public static void main(String[] args) {
         Phone phone = new Phone();
         for (int i = 0; i < 10; i++) {

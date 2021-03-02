@@ -12,14 +12,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * 2. 导致原因
  *
  * 3. 解决方案
- * 3.1 new Vector   方法层加锁
+ * 3.1 new Vector   同步方法
  * 3.2 Collections.synchronizedList(new ArrayList<>());  同步代码快
- * 3.3 CopyOnWriteArrayList
+ * 3.3 CopyOnWriteArrayList  lock.lock(); + 数组复制扩容
  *
  * <p>
  * 4. 优化建议：避免再发生
  */
-public class ContainerNotSafeDemo {
+public class J1_ContainerNotSafeDemo {
     public static void main(String[] args) {
         //Map
         Map<String, String> map = new ConcurrentHashMap<>();
