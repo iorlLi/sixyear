@@ -5,6 +5,10 @@ import lombok.SneakyThrows;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * countDownLatch减为0之后，await放行，或者达到await的设定超时时间
+ * 减完生效
+ */
 public class J5_CountDownLatchDemo {
     @SneakyThrows
     public static void main(String[] args) {
