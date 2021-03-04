@@ -10,6 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 基于Lock版本
  * 线程  操作  资源类
  * 判断  干活  通知
+ * idea 查看diff
  */
 public class J10_ProdConsumer_traditionDemo {
     public static void main(String[] args) {
