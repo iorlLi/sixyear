@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Atomatic实现：unsafe + cas
- * comparmAndSwap  比较并交换
+ * unsafe.comparmAndSwapInt  比较并交换
  * unsafe类的方法为 cpu原语，自身就保证了原子性
  * <p>
  * cas：不加锁，保证一致性
