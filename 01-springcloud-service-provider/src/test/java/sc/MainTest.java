@@ -1,6 +1,6 @@
 package sc;
 
-import iorl.HelloWorld;
+//import iorl.HelloWorld;
 
 public class MainTest {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class MainTest {
         System.out.println(a | b);//00001010
         System.out.println(a & b);//00000000
 
-        String s = new HelloWorld().sayHello();
-        System.out.println(s);
+      //  String s = new HelloWorld().sayHello();
+       // System.out.println(s);
     }
 }

@@ -1,0 +1,23 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: 01-springcloud-service-provider
+  datasource:
+    url: jdbc:mysql://localhost:3306/iorl?serverTimezone=GMT
+    username: root
+    password: Welcome1
+    driver-class-name: com.mysql.jdbc.Driver
+  ##
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        eureka.client.service-url.defaultZone: http://eureka8761:8761/eureka/,http://eureka8762:8762/eureka/
+
+
+
+# mybatis
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml

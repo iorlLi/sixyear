@@ -27,3 +27,6 @@
 >![img.png](img.png)
 ### 使用
 >![img_1.png](img_1.png)
+
+lock 与 synchronized区别
+>![img_2.png](img_2.png)

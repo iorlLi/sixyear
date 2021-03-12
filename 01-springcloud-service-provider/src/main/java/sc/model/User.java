@@ -1,30 +1,20 @@
 package sc.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.Data;
+
+@Data
 public class User {
+    @TableField(exist = false)
     private String name;
+    /*
+    所有部署表字段的属性，使用mybais plus时候都要加 上此注解
+     */
+    @TableField(exist = false)
     private String addr;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", addr='" + addr + '\'' +
-                '}';
-    }
+    private Long id;
+    private Integer age;
+    private String email;
+    private String mz;
 }

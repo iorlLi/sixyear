@@ -11,7 +11,6 @@ public class HelloController {
     @RequestMapping("/service/hello")
     public String hello() {
         System.out.println("p hello");
-        int a = 10/ 0;
         return "provider1==>hello.";
     }
 
