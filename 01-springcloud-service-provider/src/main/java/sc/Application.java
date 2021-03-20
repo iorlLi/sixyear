@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -11,7 +12,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        //返回的IOC容器
+        ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
+
+        String[] beanDefinitionNames = run.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            //System.out.println(beanDefinitionName);
+        }
     }
 
 }

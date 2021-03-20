@@ -4,6 +4,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class MainTest {
+
+    final static  String str =  "a";
     public static void main(String[] args) throws Exception {
 
         Demo demo = new Demo("16", "张三", "阿波罗");
