@@ -5,10 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableEurekaClient
 @MapperScan("sc.mapper") //有了这个注解，其他mapper就不要加注解了
+@EnableTransactionManagement
 public class Application {
 
     public static void main(String[] args) {

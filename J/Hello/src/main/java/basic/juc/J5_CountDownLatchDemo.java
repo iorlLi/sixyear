@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class J5_CountDownLatchDemo {
     @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
         int count = 6;
         CountDownLatch countDownLatch = new CountDownLatch(count);
         for (int i = 0; i < count; i++) {

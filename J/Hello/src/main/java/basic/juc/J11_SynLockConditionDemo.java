@@ -1,5 +1,6 @@
 package basic.juc;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -56,6 +57,7 @@ class ShareResource {
             }
             //do
             for (int i = 0; i < 5; i++) {
+                try { TimeUnit.SECONDS.sleep(1); } catch (InterruptedException e) { e.printStackTrace(); }
                 System.out.println(Thread.currentThread().getName() + "\t" + i);
             }
             //signal
@@ -73,10 +75,12 @@ class ShareResource {
         try {
             //判断
             while (flag != 2) {
+                System.out.println("c2.await()");
                 c2.await();
             }
             //do
             for (int i = 0; i < 10; i++) {
+                try { TimeUnit.SECONDS.sleep(1); } catch (InterruptedException e) { e.printStackTrace(); }
                 System.out.println(Thread.currentThread().getName() + "\t" + i);
             }
             //signal

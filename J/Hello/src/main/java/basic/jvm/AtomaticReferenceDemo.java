@@ -7,12 +7,15 @@ import lombok.ToString;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Getter
-@AllArgsConstructor
 @ToString
 class User {
     private String name;
     private int age;
 
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 }
 
 /**
