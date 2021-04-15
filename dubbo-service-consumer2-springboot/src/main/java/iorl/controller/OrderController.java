@@ -15,10 +15,12 @@ import java.util.List;
 public class OrderController {
     @Autowired
     OrderServiceImpl orderService;
+    private List<UserAddress> userAddresses;
 
     @RequestMapping("/initOrder")
     @ResponseBody
     public List<UserAddress> initOrder(@RequestParam("uid") String userId) {
-        return orderService.initOrder(userId);
+        userAddresses = orderService.initOrder(userId);
+        return userAddresses;
     }
 }

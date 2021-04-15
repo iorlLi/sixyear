@@ -24,6 +24,7 @@ public class MaxSub {
 
     /**
      * 递归--分治
+     *
      * 根据left和right计算出center
      * 分别递归
      * 计算包含center的最大左右子序列求和

@@ -2,7 +2,6 @@ package iorl.service.impl;
 
 import iorl.beans.UserAddress;
 import iorl.interfaces.UserService;
-import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
