@@ -22,15 +22,15 @@ public class InsertSort {
         for (int i = 1; i < arr.length; i++) {
             int tmp = arr[i];
             int index = i;
-            if (tmp < arr[i - 1]) {//插入排序时，开始的位置之前都已经是有序的了
-                for (int j = i - 1; j >= 0; j--) {
+            //if (tmp < arr[i - 1]) {//插入排序时，开始的位置之前都已经是有序的了
+                for (int j = i - 1; j >= 0 && arr[j] > tmp; j--) {
                     if (tmp < arr[j]) {
                         arr[j + 1] = arr[j];
                         index = j;
                     }
                 }
                 arr[index] = tmp;
-            }
+         //   }
             /*for (int j = i; j > 0; j--) {
                 loopCount++;
                 if (arr[j] < arr[j - 1]) {
