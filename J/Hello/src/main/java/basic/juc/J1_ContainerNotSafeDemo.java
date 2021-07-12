@@ -23,7 +23,8 @@ public class J1_ContainerNotSafeDemo {
     public static void main(String[] args) {
         //Map
         Map<String, String> map = new ConcurrentHashMap<>();
-        //源码和hashma区别
+        //
+        listNoteSafe();
     }
 
     private static void setNotSafe() {
@@ -39,10 +40,10 @@ public class J1_ContainerNotSafeDemo {
     }
 
     private static void listNoteSafe() {
-        //        List<String> list = new ArrayList<>(3);
-        // List<String> list  = new Vector<String>();
+//                List<String> list = new ArrayList<>();
+         List<String> list  = new Vector<String>();
 //        List<String> list = Collections.synchronizedList(new ArrayList<>());
-        List<String> list = new CopyOnWriteArrayList<>();
+//        List<String> list = new CopyOnWriteArrayList<>();
         for (int i = 0; i < 30; i++) {
             new Thread(() -> {
                 //  synchronized (ContainerNotSafeDemo.class) {

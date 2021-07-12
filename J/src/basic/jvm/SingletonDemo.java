@@ -1,26 +1,26 @@
 package basic.jvm;
 
-public class SignletonDemo {
-    static volatile SignletonDemo instance = null;
+public class SingletonDemo {
+    static volatile SingletonDemo instance = null;
 
-    private SignletonDemo() {
+    private SingletonDemo() {
         System.out.println("执行构造器");
     }
 
     //懒汉单例
-    public static SignletonDemo getInstance1() {
+    public static SingletonDemo getInstance1() {
         if (instance == null) {
-            instance = new SignletonDemo();
+            instance = new SingletonDemo();
         }
         return instance;
     }
 
     //DCL double check lock 双端检查：加锁前后
-    public static SignletonDemo getInstance2() {
+    public static SingletonDemo getInstance2() {
         if (instance == null) {
-            synchronized (SignletonDemo.class) {
+            synchronized (SingletonDemo.class) {
                 if (instance == null) {
-                    instance = new SignletonDemo();
+                    instance = new SingletonDemo();
                 }
             }
         }
@@ -32,7 +32,7 @@ public class SignletonDemo {
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 //SignletonDemo.getInstance1();
-                SignletonDemo.getInstance2();
+                SingletonDemo.getInstance2();
             }, String.valueOf(i)).start();
         }
 

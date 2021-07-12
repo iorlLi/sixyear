@@ -1,5 +1,6 @@
 package basic.juc;
 
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -11,8 +12,9 @@ public class J7_Semaphore {
                 try {
                     semaphore.acquire();
                     System.out.println(Thread.currentThread().getName() + ") 获取资源");
-                    try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+                    try { TimeUnit.SECONDS.sleep(1 + new Random().nextInt(9)); } catch (InterruptedException e) { e.printStackTrace(); }
                     System.out.println(Thread.currentThread().getName() + ") 释放资源");
+//                    try { TimeUnit.SECONDS.sleep(1 + new Random().nextInt(9)); } catch (InterruptedException e) { e.printStackTrace(); }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

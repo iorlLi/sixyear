@@ -58,6 +58,7 @@ public class ABADemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            System.out.println("这时候的版本号" + refs.getStamp());
             boolean result = refs.compareAndSet(100, 2021, stamp, stamp + 1);
             System.out.println(Thread.currentThread().getName() + " 修改结果" + result);
             System.out.println(refs.getStamp() + " " + refs.getReference());

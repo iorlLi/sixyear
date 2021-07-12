@@ -17,7 +17,13 @@ public class CasDemo {
         System.out.println(atomicInteger.compareAndSet(3, 111) + " " + atomicInteger);
         System.out.println(atomicInteger.compareAndSet(3, 222) + " " + atomicInteger);
         System.out.println(atomicInteger.get());
-        atomicInteger.getAndIncrement();
+        // 返回原来的值
+        int andIncrement = atomicInteger.getAndIncrement();
+        System.out.println(andIncrement);
+        // 需要使用get方法获取现在内存中的值
+        System.out.println(atomicInteger.get());
+        int i = atomicInteger.addAndGet(1);
+        System.out.println(i);
     }
 
 }

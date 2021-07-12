@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * volatile 保证了 可见性、不保证原子性，禁止指令重排序
  * jmm:java内存模式 需要 保证 可见性、原子性，禁止指令重排
  * volatile为轻量级同步机制
- * 使用 volidate + aotomic* 来保证原子性
+ * 使用 volatile + aotomic* 来保证原子性
  */
 
 class Data {
@@ -33,7 +33,7 @@ public class VolatileDemo {
 
     public static void main(String[] args) {
         canAtomic();
-        //canLook();
+//        canLook();
     }
 
     /**
