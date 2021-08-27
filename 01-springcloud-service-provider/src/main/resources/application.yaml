@@ -12,6 +12,9 @@ spring:
   ## redis相关配置
   redis:
     password: Welcome1
+    database: 0
+    host: localhost         # Redis服务器地址
+    port: 6379              # Redis服务器连接端口
   ##
 eureka:
   client:
